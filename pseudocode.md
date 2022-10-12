@@ -1,8 +1,8 @@
-#### PSEUDOCODE ####
+# PSEUDOCODE #
 
 This is the pseudocode for the deduper project to remove PCR duplicates from a SAM file (Reference Based PCR Duplicate Removal tool)
 
-### THE PROBLEM ###
+## THE PROBLEM ##
 
 During library preparation for sequencing of DNA and/or RNA, a necessary step is to use polymerase-chain reaction amplication to increase the amount of DNA or RNA content that will be fed into a sequencer. While this step is necessary, it also creates a number of PCR duplicates that go through the sequencing, quality filtering/trimming, during the subsequent alignment step, they're turned into SAM files. The overall problem is that these duplicates are just that, duplicates and thus need to be removed before counting. 
 
@@ -17,7 +17,7 @@ PCR duplicates can be identified because they have the same chromosome, starting
 5. Create a set in which you will put the chromosome (col 3), adjusted position (col 4), strand (col 2), and UMI (col 1) as the key. 
 6. If the key is unique, write its corresponding line to the file. 
 
-# HIGH LEVEL FUNCTIONS #
+## HIGH LEVEL FUNCTIONS ##
 
 def adj_position():
     '''This function inputs the starting position and adjusts it for soft clipping on the forward strand and soft clipping, indels, and skipped regions for the reverse'''  
